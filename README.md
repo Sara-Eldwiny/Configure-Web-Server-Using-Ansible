@@ -1,4 +1,4 @@
-# Secure-Jenkins-ansible-
+# Secure-Jenkins (ansible)
 
 ## Description:
 SecureJenkins is a project aimed at setting up a secure and efficient Jenkins continuous integration and continuous deployment (CI/CD) environment. This project automates the installation and configuration of Java 17, Jenkins, and Nginx with SSL encryption, ensuring a robust and secure infrastructure for software development and deployment workflows.
