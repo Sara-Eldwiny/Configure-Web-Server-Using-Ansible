@@ -1,0 +1,59 @@
+- name: install java17
+  dnf:
+   name: java-17-amazon-corretto.x86_64
+   state: latest
+  become: true
+
+- name: install jenkins 
+  dnf:
+   name: jenkins
+   state: latest
+ 
+  
+
+- name: install jenkins key
+  get_url:
+   url: https://pkg.jenkins.io/debian/jenkins.io-2023.key
+   dest: /tmp/jenkins.io-2023.key
+  become: true
+
+- name: Import Jenkins key
+  rpm_key:
+   key: https://pkg.jenkins.io/redhat/jenkins.io-2023.key
+   state: present
+  become: true
+
+- name: Start Jenkins
+  service:
+   name: jenkins
+   state: started
+  become: true
+  tags: start-jenkins
+
+- name: Install Nginx
+  dnf:
+    name: nginx
+    state: latest
+  become: true
+
+- name: Generate a self-signed SSL certificate
+  openssl_certificate:
+    path: /etc/nginx/certs/self-signed.crt
+    privatekey_path: /etc/nginx/certs/self-signed.key
+    common_name: "sara.com"
+    provider: selfsigned
+
+- name: Configure Nginx for Jenkins with SSL
+  template:
+    src: jenkins.conf.j2
+    dest: /etc/nginx/conf.d/jenkins.conf
+  notify: Restart Nginx
+
+- name: Restart Nginx
+  service:
+    name: nginx
+    state: restarted
+  become: true
+
+
+
