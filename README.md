@@ -1,7 +1,7 @@
-# Secure-Jenkins (ansible)
+# Configure Web Server Using Ansible
 
 ## Description:
-SecureJenkins is a project aimed at setting up a secure and efficient Jenkins continuous integration and continuous deployment (CI/CD) environment. This project automates the installation and configuration of Java 17, Jenkins, and Nginx with SSL encryption, ensuring a robust and secure infrastructure for software development and deployment workflows.
+Configure Web Server Using Ansible is a project aimed at setting up a secure and efficient Jenkins continuous integration and continuous deployment (CI/CD) environment. This project automates the installation and configuration of Java 17, Jenkins, and Nginx with SSL encryption, ensuring a robust and secure infrastructure for software development and deployment workflows.
 
 ## The installation process includes the following steps:
 
@@ -14,4 +14,4 @@ SecureJenkins is a project aimed at setting up a secure and efficient Jenkins co
     Configuring Nginx to proxy requests to Jenkins with SSL encryption.
     Restarting Nginx to apply the configuration changes.
 
-With SecureJenkins, organizations can quickly deploy a secure Jenkins environment, enabling streamlined development, testing, and deployment pipelines while prioritizing data integrity and confidentiality.
+Now organizations can quickly deploy a secure Jenkins environment, enabling streamlined development, testing, and deployment pipelines while prioritizing data integrity and confidentiality.
